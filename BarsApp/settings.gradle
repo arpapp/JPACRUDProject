@@ -1,0 +1,3 @@
+rootProject.name = 'BarsApp'
+
+includeFlat 'JPABars'
