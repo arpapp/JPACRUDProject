@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Bar Info</title>
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 		<c:when test="${!empty bar }">
 
 			<h1>Bar: ${bar.name}</h1>
-			
+			<h2>ID: ${bar.id }</h2>
 			<c:choose>
 				<c:when test="${!empty bar.city }">
 					<h2>City: ${bar.city}</h2>
@@ -27,7 +27,7 @@
 			
 			<h2>Country: ${bar.country}</h2>
 			<h2>Rating: ${bar.rating}</h2>
-			<h2>Has Toni blacked out at this establishment:
+			<h2>Has the person who entered ${bar.name} blacked out at this establishment:
 				${bar.blackedOutAt}</h2>
 
 			<c:choose>

@@ -15,5 +15,8 @@
 			type="submit" value="submit">
 	</form>
 
+	<form action="createBarForm.do" method=GET>
+		<input type="submit" value="Add a Bar">
+	</form>
 </body>
 </html>
