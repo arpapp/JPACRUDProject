@@ -39,9 +39,20 @@ public class BarDAOImpl implements BarDAO {
 	}
 
 	@Override
-	public boolean updateBar(Bar bar) {
-		// TODO Auto-generated method stub
-		return false;
+	public Bar updateBar(int id, Bar bar) {
+		
+		Bar toUpdate = em.find(Bar.class, id);
+		
+		toUpdate.setName(bar.getName());
+		toUpdate.setCity(bar.getCity());
+		toUpdate.setCountry(bar.getCountry());
+		toUpdate.setRating(bar.getRating());
+		toUpdate.setBlackedOutAt(bar.getBlackedOutAt());
+		toUpdate.setActivities(bar.getActivities());
+		toUpdate.setOtherComments(bar.getOtherComments());
+		em.flush();
+		
+		return toUpdate;
 	}
 
 	@Override

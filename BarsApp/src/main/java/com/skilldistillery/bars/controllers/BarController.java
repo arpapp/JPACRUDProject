@@ -64,4 +64,23 @@ public class BarController {
 		return mv;
 	}
 	
+	@RequestMapping(path="updateForm.do", params = "id", method = RequestMethod.GET)
+	public ModelAndView takeToUpdateForm(int id) {
+		ModelAndView mv = new ModelAndView();
+		Bar toUpdate = dao.findById(id);
+		mv.addObject("bar", toUpdate);
+		mv.setViewName("updateForm");
+		return mv;
+	}
+	
+	@RequestMapping(path = "updateBar.do", params = "id")
+	public ModelAndView updateBar (int id, Bar bar) {
+		ModelAndView mv = new ModelAndView();
+//		Bar toUpdate = dao.findById(id);
+		Bar updated = dao.updateBar(id, bar);
+		mv.addObject("bar", updated);
+		mv.setViewName("barDetail");
+		return mv;
+	}
+	
 }

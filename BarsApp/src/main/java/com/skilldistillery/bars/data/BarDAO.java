@@ -8,6 +8,6 @@ public interface BarDAO {
 	public Bar findById(int id);
 	public Bar createBar(Bar newBar);
 	public boolean deleteBar(int id);
-	public boolean updateBar(Bar bar);
+	public Bar updateBar(int id, Bar bar);
 	public List<Bar> findBarWithSearchKeyword(String searchKeyword);
 }

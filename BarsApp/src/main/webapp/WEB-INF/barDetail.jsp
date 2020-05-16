@@ -52,6 +52,11 @@
 				<input type="submit" value="Delete Bar">
 				<input type="hidden" name = "id" value="${bar.id}">
 			</form>
+			
+			<form action="updateForm.do" method=GET>
+				<input type="submit" value="Update Bar">
+				<input type="hidden" name = "id" value="${bar.id}">
+			</form>
 
 		</c:when>
 		<c:otherwise>
