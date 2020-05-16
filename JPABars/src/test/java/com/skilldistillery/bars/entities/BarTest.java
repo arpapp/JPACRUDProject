@@ -46,6 +46,13 @@ class BarTest {
 	void test() {
 		assertNotNull(bar);
 		assertEquals("Outer", bar.getName());
+		assertEquals("Kochi", bar.getCity());
+		assertEquals("Japan", bar.getCountry());
+		assertEquals(10, bar.getRating());
+		assertEquals("Yes", bar.getBlackedOutAt());
+		assertEquals("2020-01-01", bar.getCreated().toString());
+		assertEquals("Dancing, DJing", bar.getActivities());
+		assertEquals("Small dance floor, one room bar", bar.getOtherComments());
 	}
 
 }
