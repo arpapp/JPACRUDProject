@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.bars.data.BarDAO;
 import com.skilldistillery.bars.entities.Bar;
@@ -14,11 +15,13 @@ public class BarController {
 	@Autowired
 	private BarDAO dao;
 	
-	@RequestMapping(path="getBar.do")
-	public String findBar(Integer id, Model model) {
+	@RequestMapping(path="searchId.do")
+	public ModelAndView findBar(Integer id) {
+		ModelAndView mv = new ModelAndView();
 		Bar b = dao.findById(id);
-		model.addAttribute("bar",b);
-		return "barDetail";
+		mv.addObject("bar", b);
+		mv.setViewName("barDetail");
+		return mv;
 	}
 	
 }
