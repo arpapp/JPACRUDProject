@@ -24,18 +24,18 @@ public class BarDAOImpl implements BarDAO {
 
 	@Override
 	public Bar createBar(Bar newBar) {
-//		em.getTransaction().begin();
 		em.persist(newBar);
-		em.flush();
-//		em.getTransaction().commit();
-		
+		em.flush();		
 		return newBar;
 	}
 
 	@Override
-	public boolean deleteBar(Bar deleteBar) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deleteBar(int id) {
+		em.remove(em.find(Bar.class, id));
+		em.flush();
+		boolean stillContains = em.contains(em.find(Bar.class, id));
+		System.out.println(stillContains);
+		return !stillContains;
 	}
 
 	@Override

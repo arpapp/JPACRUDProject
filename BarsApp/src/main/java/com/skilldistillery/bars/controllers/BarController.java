@@ -39,4 +39,29 @@ public class BarController {
 		return mv;
 	}
 	
+	@RequestMapping(path="deleteForm.do", params = "id", method = RequestMethod.GET)
+	public ModelAndView takeToDeleteForm(int id) {
+		ModelAndView mv = new ModelAndView();
+		Bar toDelete = dao.findById(id);
+		mv.addObject("bar", toDelete);
+		mv.setViewName("deleteDetail");
+		return mv;
+	}
+	
+	@RequestMapping(path="delete.do", method = RequestMethod.POST)
+	public ModelAndView deleteBar(int id) {
+		ModelAndView mv = new ModelAndView();
+		boolean result = dao.deleteBar(id);
+		if(result == true) {
+			String printOut = "Your bar was deleted succesfully.";
+			mv.addObject("printOut", printOut);
+		}
+		else {
+			String printOut = "Your bar was NOT deleted succesfully.";
+			mv.addObject("printOut",printOut);
+		}
+		mv.setViewName("resultDelete");
+		return mv;
+	}
+	
 }
