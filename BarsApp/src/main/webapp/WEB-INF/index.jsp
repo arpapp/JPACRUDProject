@@ -14,6 +14,11 @@
 		Search by Bar ID <br> <input type="text" name="id"> <input
 			type="submit" value="submit">
 	</form>
+	
+	<form action="searchKeyword.do" method="GET">
+		Search by Keyword <br> <input type="text" name="keyword"> <input
+			type="submit" value="submit">
+	</form>
 
 	<form action="createBarForm.do" method=GET>
 		<input type="submit" value="Add a Bar">

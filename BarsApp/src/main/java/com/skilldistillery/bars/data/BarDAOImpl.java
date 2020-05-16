@@ -57,8 +57,12 @@ public class BarDAOImpl implements BarDAO {
 
 	@Override
 	public List<Bar> findBarWithSearchKeyword(String searchKeyword) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Bar> results = null;
+		String jpql = "Select bar from Bar bar where bar.name like :key or bar.city like :key or bar.country like :key"
+				+ " or bar.activities like :key or bar.otherComments like :key";
+//		String jpql = "Select bar from Bar bar where bar.name like :key";
+		results = em.createQuery(jpql, Bar.class).setParameter("key", searchKeyword).getResultList();
+		return results;
 	}
 
 }

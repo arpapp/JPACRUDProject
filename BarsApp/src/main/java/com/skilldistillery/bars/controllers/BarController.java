@@ -2,13 +2,16 @@ package com.skilldistillery.bars.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.bars.data.BarDAO;
 import com.skilldistillery.bars.entities.Bar;
+
+
+import java.util.List;
+
 
 @Controller
 public class BarController {
@@ -22,6 +25,15 @@ public class BarController {
 		Bar b = dao.findById(id);
 		mv.addObject("bar", b);
 		mv.setViewName("barDetail");
+		return mv;
+	}
+	
+	@RequestMapping(path="searchKeyword.do", params = "keyword")
+	public ModelAndView findBars(String keyword) {
+		ModelAndView mv = new ModelAndView();
+		List<Bar> results = dao.findBarWithSearchKeyword(keyword);
+		mv.addObject("bars", results);
+		mv.setViewName("keywordResults");
 		return mv;
 	}
 	
@@ -76,7 +88,6 @@ public class BarController {
 	@RequestMapping(path = "updateBar.do", params = "id")
 	public ModelAndView updateBar (int id, Bar bar) {
 		ModelAndView mv = new ModelAndView();
-//		Bar toUpdate = dao.findById(id);
 		Bar updated = dao.updateBar(id, bar);
 		mv.addObject("bar", updated);
 		mv.setViewName("barDetail");
