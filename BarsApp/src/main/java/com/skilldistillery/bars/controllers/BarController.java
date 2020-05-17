@@ -19,6 +19,11 @@ public class BarController {
 	@Autowired
 	private BarDAO dao;
 	
+	@RequestMapping(path="home.do")
+	public String goHome() {
+		return "index";
+	}
+	
 	@RequestMapping(path="searchId.do")
 	public ModelAndView findBar(Integer id) {
 		ModelAndView mv = new ModelAndView();

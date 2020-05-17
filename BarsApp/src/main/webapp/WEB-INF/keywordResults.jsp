@@ -47,12 +47,28 @@
 					<p>No comments found</p>
 				</c:otherwise>
 			</c:choose>
+			<form action="deleteForm.do" method=GET>
+				<input type="submit" value="Delete Bar"> <input
+					type="hidden" name="id" value="${bar.id}">
+			</form>
+
+			<form action="updateForm.do" method=GET>
+				<input type="submit" value="Update Bar"> <input
+					type="hidden" name="id" value="${bar.id}">
+			</form>
+
+			<form action="home.do" method=GET>
+				<input type="submit" value="Home">
+			</form>
 		</c:forEach>
 
 	</c:when>
 
 	<c:otherwise>
 		<p>No bars found matching your keyword</p>
+		<form action="home.do" method=GET>
+				<input type="submit" value="Home">
+			</form>
 	</c:otherwise>
 
 

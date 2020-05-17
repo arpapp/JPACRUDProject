@@ -57,10 +57,16 @@
 				<input type="submit" value="Update Bar">
 				<input type="hidden" name = "id" value="${bar.id}">
 			</form>
+			<form action="home.do" method=GET>
+				<input type="submit" value="Home">
+			</form>
 
 		</c:when>
 		<c:otherwise>
 			<p>No Bar Found</p>
+			<form action="home.do" method=GET>
+				<input type="submit" value="Home">
+			</form>
 		</c:otherwise>
 	</c:choose>
 </body>

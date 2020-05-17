@@ -12,5 +12,8 @@
 <body>
 	<h1>Results</h1>
 	<h2>${printOut}</h2>
+	<form action="home.do" method=GET>
+		<input type="submit" value="Home">
+	</form>
 </body>
 </html>

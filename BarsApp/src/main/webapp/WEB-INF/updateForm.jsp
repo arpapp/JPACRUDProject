@@ -15,25 +15,20 @@
 	<h4>Please enter the following information:</h4>
 
 	<form action="updateBar.do" method="POST">
-		Name: <input type="text" name="name" size="45" value = "${bar.name }" required> 
-		<br>
-		City:<input type="text" name="city" size="45" value = "${bar.city }"> 
-		<br>
-		Country: <input type="text" name="country" size="45" value = "${bar.country }"required> 
-		<br>
-		Rating (1-worst 10-best): <input type="number" name="rating" value = "${bar.rating }" min="1" max="10">
-		<br>
-		Have you blacked out at this bar: 
-		<input type="text" name="blackedOutAt" value = "${bar.blackedOutAt }" size="5"> 
-		<!-- <input type="radio" name="blackedOutAt"required>Yes
-		<input type="radio" name="blackedOutAt" required>No -->
-		<br>
-		Activities: <input type="text" name="activities" value = "${bar.activities }" size="200"> 
-		<br>
-		Other comments: <input type="text" name="otherComments" value = "${bar.otherComments }" size="200"> 
-		<br>
-		<input type="submit" class="button" value="Submit" />
-		<input type="hidden" value="${bar.id }" name="id">
+		<table>
+			<tr><td>Name: </td><td><input type="text" name="name" size="45" value="${bar.name }" required/></td></tr>
+			<tr><td>City:</td><td><input type="text" name="city" size="45" value="${bar.city }"></td></tr>
+			<tr><td> Country:</td><td><input type="text" name="country" size="45" value="${bar.country }"required/></td></tr>
+			<tr><td> Rating (1-worst 10-best): </td> <td><input type="number" name="rating" value="${bar.rating }" min="1"max="10"></td></tr>
+			<tr><td>Have you blacked out at this bar:</td><td><input type="text" name="blackedOutAt" value="${bar.blackedOutAt }"size="5"></td></tr>
+			<!-- <input type="radio" name="blackedOutAt"required>Yes
+			<input type="radio" name="blackedOutAt" required>No -->
+			<tr><td> Activities:</td><td><input type="text" name="activities" value="${bar.activities }"size="200"></td></tr>
+			<tr><td> Other comments:</td><td><input type="text" name="otherComments" value="${bar.otherComments }"size="200"></td></tr>
+		</table>
+			<br>
+			<input type="submit" class="button" value="Submit" />
+			<input type="hidden" value="${bar.id }" name="id">
 	</form>
 </body>
 </html>
