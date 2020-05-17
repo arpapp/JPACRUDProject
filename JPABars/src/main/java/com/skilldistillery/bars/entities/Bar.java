@@ -41,6 +41,22 @@ public class Bar {
 	
 	@Column(name="other_comments")
 	private String otherComments;
+	
+	private String picture;
+	
+	
+
+	public String getPicture() {
+		return picture;
+	}
+
+
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+
+
 
 	public Bar() {
 		super();
@@ -167,10 +183,14 @@ public class Bar {
 
 	@Override
 	public String toString() {
-		return "Bar [id=" + id + ", name=" + name + ", city=" + city + ", rating=" + rating + ", blackedOutAt="
-				+ blackedOutAt + ", created=" + created + ", activities=" + activities + ", otherComments="
-				+ otherComments + "]";
+		return "Bar [id=" + id + ", name=" + name + ", city=" + city + ", country=" + country + ", rating=" + rating
+				+ ", blackedOutAt=" + blackedOutAt + ", created=" + created + ", activities=" + activities
+				+ ", otherComments=" + otherComments + ", picture=" + picture + "]";
 	}
+
+
+
+	
 
 	
 	

@@ -53,6 +53,7 @@ class BarTest {
 		assertEquals("2020-01-01", bar.getCreated().toString());
 		assertEquals("Dancing, DJing", bar.getActivities());
 		assertEquals("Small dance floor, one room bar", bar.getOtherComments());
+		assertEquals("https://imgur.com/a/coyiGDb", bar.getPicture());
 	}
 
 }

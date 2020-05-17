@@ -50,6 +50,7 @@ public class BarDAOImpl implements BarDAO {
 		toUpdate.setBlackedOutAt(bar.getBlackedOutAt());
 		toUpdate.setActivities(bar.getActivities());
 		toUpdate.setOtherComments(bar.getOtherComments());
+		toUpdate.setPicture(bar.getPicture());
 		em.flush();
 		
 		return toUpdate;
