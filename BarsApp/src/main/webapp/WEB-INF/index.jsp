@@ -21,7 +21,7 @@ h1 {
 
 body {
 	background-image:
-		url(https://cdn.pixabay.com/photo/2016/03/09/09/42/buildings-1245953_1280.jpg);
+		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(https://cdn.pixabay.com/photo/2016/03/09/09/42/buildings-1245953_1280.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -60,7 +60,7 @@ body {
 	font-family: 'Fredoka One', cursive;
 }
 </style>
-<title>Blackout Bars</title>
+<title>BarOut DB</title>
 </head>
 <body>
 
@@ -81,7 +81,7 @@ body {
 		</form>
 		<br>
 		<form action="createBarForm.do" method=GET>
-			<input class="button" type="submit" value="*---- Add a Bar ----*">
+			<input class="button" type="submit" value=" Add a Bar ">
 		</form>
 		<!-- </center> -->
 	</div>

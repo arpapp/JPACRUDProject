@@ -12,15 +12,75 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+	
+	<link
+	href="https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+	rel="stylesheet">
 <style>
-.image{
-	border: 5px solid black
+h1 {
+	font-family: 'Fascinate Inline', cursive;
+	color: white;
+	text-align: center;
+	font-size: 75px;
+}
+
+body {
+	background-image:
+		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(https://cdn.pixabay.com/photo/2016/03/09/09/42/buildings-1245953_1280.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: 'Fredoka One', cursive;
+	color: white;
+}
+
+img{
+	height: 400px;
+	width:600px;
+}
+
+.main {
+	font-family: 'Fredoka One', cursive;
+	color: white;
+	width: 400px;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 30px;
+}
+
+.button {
+	font-size: 20px;
+	color: white;
+	background-color: transparent;
+	font-family: 'Fredoka One', cursive;
+	border: 2px solid white;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+}
+.button:hover{
+	font-size: 20px;
+	color: black;
+	background-color: white;
+	font-family: 'Fredoka One', cursive;
+	border: 2px solid white;
+	border-radius: 8px;
+}
+.textBox{
+	font-size: 20px;
+	font-family: 'Fredoka One', cursive;
 }
 </style>
 </head>
 <body>
 
+
 	<c:choose>
+	
 		<c:when test="${!empty bar }">
 
 			<h1>Bar: ${bar.name}</h1>
@@ -68,24 +128,25 @@
 			</c:choose>
 
 			<form action="updateForm.do" method=GET>
-				<input type="submit" value="Update Bar"> <input
+				<input class="button" type="submit" value="Update Bar"> <input
 					type="hidden" name="id" value="${bar.id}">
 			</form>
 
 			<form action="deleteForm.do" method=GET>
-				<input type="submit" value="Delete Bar"> <input
+				<input class="button"  type="submit" value="Delete Bar"> <input
 					type="hidden" name="id" value="${bar.id}">
 			</form>
 
 			<form action="home.do" method=GET>
-				<input type="submit" value="Home">
+				<input class="button" type="submit" value="Home">
 			</form>
 
 		</c:when>
+		
 		<c:otherwise>
 			<p>No Bar Found</p>
 			<form action="home.do" method=GET>
-				<input type="submit" value="Home">
+				<input class="button"  type="submit" value="Home">
 			</form>
 		</c:otherwise>
 	</c:choose>

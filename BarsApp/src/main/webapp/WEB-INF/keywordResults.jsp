@@ -22,9 +22,14 @@ h1 {
 	font-size: 75px;
 }
 
+h3{
+	font-family: 'Fascinate Inline', cursive;
+	color: white;
+}
+
 body {
 	background-image:
-		url(https://cdn.pixabay.com/photo/2016/03/09/09/42/buildings-1245953_1280.jpg);
+		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(https://cdn.pixabay.com/photo/2016/03/09/09/42/buildings-1245953_1280.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -58,6 +63,11 @@ a{
 	font-family: 'Fredoka One', cursive;
 	color: white;
 	font-size: 30px;
+	transition-duration: 0.4s;
+}
+a:hover{
+	color: black;
+	background-color: white;
 }
 </style>
 </head>
@@ -67,6 +77,7 @@ a{
 	<c:when test="${!empty bars }">
 		
 		<h1>Results:</h1>
+		<h3>Please click on the bar's name to view details</h3>
 
 		<%-- <c:forEach var="bar" items="${bars }">
 			<h1>Bar: ${bar.name}</h1>
@@ -146,7 +157,7 @@ a{
 	<c:otherwise>
 		<p>No bars found matching your keyword</p>
 		<form action="home.do" method=GET>
-				<input type="submit" value="Home">
+				<input class="button" type="submit" value="Home">
 			</form>
 	</c:otherwise>
 
